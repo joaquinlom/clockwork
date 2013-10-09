@@ -1,28 +1,10 @@
-== README
+== ClockWork
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Es el desarrollo de una aplicación de dos partes para el control de registro de asistencias del personal o para cualquier propósito en general.  
 
-Things you may want to cover:
+La cual por medio de una aplicación móvil se registran las entradas y las salidas aprovechando el sistema de Geolocalización (GPS) de los teléfonos inteligentes enviar la información a la aplicación en la web.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Por medio de una aplicación web se lleva acabo el control administrativo de lo generado y se lleva la estadística en general.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+![ClockWork E-R](http://farm6.staticflickr.com/5534/10164857195_3134df7c3e_b.jpg)
