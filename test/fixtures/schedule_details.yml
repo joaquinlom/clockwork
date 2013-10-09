@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  entry_time: 2013-10-08 22:53:58
+  exit_time: 2013-10-08 22:53:58
+  week_day: MyString
+  latitude: 1.5
+  length: 1.5
+
+two:
+  entry_time: 2013-10-08 22:53:58
+  exit_time: 2013-10-08 22:53:58
+  week_day: MyString
+  latitude: 1.5
+  length: 1.5

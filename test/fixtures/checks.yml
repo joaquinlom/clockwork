@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  check_in: 2013-10-08 22:46:09
+  check_out: 2013-10-08 22:46:09
+  week_day: MyString
+
+two:
+  check_in: 2013-10-08 22:46:09
+  check_out: 2013-10-08 22:46:09
+  week_day: MyString
