@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131009050746) do
+ActiveRecord::Schema.define(version: 20131009051437) do
 
   create_table "checks", force: true do |t|
     t.time     "check_in"
@@ -43,7 +43,10 @@ ActiveRecord::Schema.define(version: 20131009050746) do
     t.float    "length"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "schedule_id"
   end
+
+  add_index "schedule_details", ["schedule_id"], name: "index_schedule_details_on_schedule_id"
 
   create_table "schedules", force: true do |t|
     t.string   "job"
