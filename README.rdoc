@@ -7,4 +7,5 @@ La cual por medio de una aplicación móvil se registran las entradas y las sali
 Por medio de una aplicación web se lleva acabo el control administrativo de lo generado y se lleva la estadística en general.
 
 
-![ClockWork E-R](http://farm6.staticflickr.com/5534/10164857195_3134df7c3e_b.jpg)
+## ClockWork E-R 
+http://farm6.staticflickr.com/5534/10164857195_3134df7c3e_b.jpg
