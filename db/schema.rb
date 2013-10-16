@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131016023541) do
+ActiveRecord::Schema.define(version: 20131016043159) do
 
   create_table "checks", force: true do |t|
     t.time     "check_in"
@@ -29,9 +29,11 @@ ActiveRecord::Schema.define(version: 20131016023541) do
     t.integer  "organization_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "rol_id"
   end
 
   add_index "memberships", ["organization_id"], name: "index_memberships_on_organization_id"
+  add_index "memberships", ["rol_id"], name: "index_memberships_on_rol_id"
   add_index "memberships", ["user_id"], name: "index_memberships_on_user_id"
 
   create_table "organizations", force: true do |t|
@@ -73,9 +75,6 @@ ActiveRecord::Schema.define(version: 20131016023541) do
     t.date     "validity"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "rol_id"
   end
-
-  add_index "users", ["rol_id"], name: "index_users_on_rol_id"
 
 end
