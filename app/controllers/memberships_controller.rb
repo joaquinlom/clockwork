@@ -10,6 +10,7 @@ class MembershipsController < ApplicationController
      user = User.find(id_user)
      @membership =  user.memberships.find(id_membership)
      @memberships = Membership.find(:all, :conditions =>["organization_id <= ? ",@membership.organization.id] )
+     @users = User.all()
    end
 	end
   
