@@ -1,3 +1,3 @@
 class ScheduleDetail < ActiveRecord::Base
-	has_many :schedule
+  belongs_to :shedule
 end

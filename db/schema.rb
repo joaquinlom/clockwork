@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131027054642) do
+ActiveRecord::Schema.define(version: 20131104035013) do
 
   create_table "checks", force: true do |t|
     t.time     "check_in"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20131027054642) do
   end
 
   create_table "rols", force: true do |t|
-    t.string   "type"
+    t.string   "name"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -67,7 +67,10 @@ ActiveRecord::Schema.define(version: 20131027054642) do
     t.string   "job"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "membership_id"
   end
+
+  add_index "schedules", ["membership_id"], name: "index_schedules_on_membership_id"
 
   create_table "users", force: true do |t|
     t.string   "user_name"

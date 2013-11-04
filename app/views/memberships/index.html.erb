@@ -1,11 +1,36 @@
 <div class="jumbotron">
   <div class="container">
-    <%#*<img src="http://alertas.directoriolegislativo.org/wp-content/uploads/2013/01/noimage.png"%> 
-         <%#*style="width: 140px; height: 140px;" accesskey="" alt="..." class="img-circle">%>
+<%#*<img src="http://alertas.directoriolegislativo.org/wp-content/uploads/2013/01/noimage.png"%> 
+<%#*style="width: 140px; height: 140px;" accesskey="" alt="..." class="img-circle">%>
     <h3><%= @membership.organization.name %></h3>
     <h5><%= @membership.organization.description %></h5>
   </div>
-  <div class="container">
-    
-  </div>
+</div>
+
+<div class="container">
+  <h1>Personal</h1>
+  <table class="table table-striped table-hover">
+    <tbody>
+      <tr>
+        <td>Nombre</td>
+        <td>Perfil</td>
+        <td>Acciones</td>
+      </tr>
+    </tbody>
+    <% @memberships.each do |member| %>
+      <tr>
+        <td>
+          <%= member.user.user_name %>
+        </td>
+        <td>
+          <%= member.rol.name %>
+        </td>
+        <td>
+          <button class="btn btn-danger btn-xs"> 
+            <span class="glyphicon glyphicon-trash"></span> 
+          </button></td>
+      </tr>
+    <% end %>
+  </table>
+
 </div>
