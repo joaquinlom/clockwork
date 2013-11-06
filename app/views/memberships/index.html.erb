@@ -16,11 +16,13 @@
           <td>Nombre</td>
           <td>Perfil</td>
           <td>
-            <%= select_tag "users", options_from_collection_for_select(@users, "id", "user_name"),
-              :include_blank => 'Usuarios' %>
-            <button class="btn btn-success btn-xs"> 
-              <span class="glyphicon glyphicon-plus"></span> 
-            </button>
+                <%= select_tag "user", options_from_collection_for_select(@users, "id", "user_name"),
+                  :include_blank => 'Usuarios' %>
+                <%= select_tag "rol", options_from_collection_for_select(@roles, "id", "name"),
+                  :include_blank => 'Roles' %>
+              <button class="btn btn-success btn-xs"> 
+                <span class="glyphicon glyphicon-plus"></span> 
+              </button>
           </td>
         </tr>
       </tbody>
@@ -40,7 +42,7 @@
               <span class="glyphicon glyphicon-eye-open"></span> 
             </button>
           </td>
-          
+
         </tr>
       <% end %>
     </table>
