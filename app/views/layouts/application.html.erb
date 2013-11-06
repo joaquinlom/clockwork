@@ -23,7 +23,7 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="/">Home</a></li>
           <li><a href="#">Contacto</a></li>
           <li><a href="#">Aprende</a></li>
         </ul>
@@ -45,9 +45,16 @@
       <div class="footer">
         <p>
           © 2013 ClockWork,  All trademarks © their respective owners
-          <a  href="URL-FACEBOOK" target="_blank"><img align=right alt="siguenos en facebook" height="32" src="/assets/fb.png" title="siguenos en facebook" width="32" /></a>
-          <a  href="URL-Google+" target="_blank"><img align=right alt="siguenos en Google+" height="32" src="/assets/google.png" title="siguenos en Google+" width="32" /></a>
-          <a  href="URL-Twitter" target="_blank"><img align=right alt="siguenos en Twitter" height="32" src="/assets/twitter.png" title="siguenos en Twitter" width="32" /></a>
+        
+          <a  href="URL-FACEBOOK" target="_blank">
+            <%= link_to image_tag('fb.png', :alt => 'siguenos en facebook', :align => 'right', :height => 32, :with => 32) %> 
+          </a>
+          <a  href="URL-Google+" target="_blank">
+            <%= link_to image_tag('google.png', :alt => 'siguenos en Google +', :align => 'right', :align => 'right', :height => 32, :with => 32) %>
+          </a>
+          <a  href="URL-Twitter" target="_blank">
+            <%= link_to image_tag('twitter.png', :alt => 'siguenos en Twitter', :align => 'right', :align => 'right', :height => 32, :with => 32) %>
+          </a>
         </p>
       </div>
 
