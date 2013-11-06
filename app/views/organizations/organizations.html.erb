@@ -1,0 +1,48 @@
+<div class="container">
+
+<div class="jumbotron">
+    <h3><%= @user.user.user_name %></h3>
+    <h5><%= @user.description %></h5>
+</div>
+
+
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <h3>Mis Organizaciones</h3>
+    <button class="btn btn-success btn-xs"> 
+              <span class="glyphicon glyphicon-plus-sign"></span> 
+    </button>
+  </div>
+  <div class="panel-body">
+ 
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <td>Organizacion</td>
+        </tr>
+      </tbody>
+      <% @organizations.each do |organization| %>
+        <tr>
+          <td>
+            <%= organization.memberships.organization %>
+          </td>
+          <td>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-certificate"></span>
+            </button>
+            <button class="btn btn-success btn-xs"> 
+              <span class="glyphicon glyphicon-wrench"></span> 
+            </button>
+            <button class="btn btn-danger btn-xs"> 
+              <span class="glyphicon glyphicon-eye-remove"></span> 
+            </button>
+
+          </td>
+        </tr>
+      <% end %>
+    </table>
+</div>
+  </div>
+</div>  
