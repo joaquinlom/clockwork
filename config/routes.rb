@@ -9,8 +9,8 @@ ClockWork::Application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
-  
   get 'memberships/:id' => 'memberships#index'
+  get 'schedules/:id' => 'schedules#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
