@@ -16,6 +16,7 @@ Organization.create(name: 'Proteccion de animales', description: 'Proteger a los
 Organization.create(name: 'Amigos de los animales', description: 'Asociacion distinguida por los beneficios que ofrece a los animalitos')
 
 Membership.create(organization_id: 1, rol_id: 1, user_id: 1)
+Membership.create(organization_id: 2, rol_id: 2, user_id: 1)
 
 Schedule.create(job:'Director', membership_id: 1)
 Schedule.create(job:'Gerente', membership_id: 1)
