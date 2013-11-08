@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
  
 
-#User.create(user_name: 'Fernando Gomez Payan')
+User.create(user_name: 'Fernando Gomez Payan')
 
 Rol.create(name: 'Administrador', description: 'Cambios en general')
 Rol.create(name: 'Miembro', description: 'Usuario del sistema')
@@ -22,7 +22,6 @@ Schedule.create(job:'Director', membership_id: 1)
 Schedule.create(job:'Gerente', membership_id: 1)
 
 s = Schedule.find(1)
-s1 = Schedule.find(2)
 
 s.schedule_details.create(entry_time: 1, exit_time: 2, week_day: 'Lunes', latitude: 1, length: 2, schedule_id: s)
 s.schedule_details.create(entry_time: 1, exit_time: 2, week_day: 'Martes', latitude: 1, length: 2, schedule_id: s)
@@ -32,10 +31,13 @@ s.schedule_details.create(entry_time: 1, exit_time: 2, week_day: 'Viernes', lati
 s.schedule_details.create(entry_time: 1, exit_time: 2, week_day: 'Sabado', latitude: 1, length: 2, schedule_id: s)
 s.schedule_details.create(entry_time: 1, exit_time: 2, week_day: 'Domingo', latitude: 1, length: 2, schedule_id: s)
 
-s.schedule_details.create(entry_time: 3, exit_time: 4, week_day: 'Lunes', latitude: 1, length: 2, schedule_id: s1)
-s.schedule_details.create(entry_time: 3, exit_time: 4, week_day: 'Martes', latitude: 1, length: 2, schedule_id: s1)
-s.schedule_details.create(entry_time: 3, exit_time: 4, week_day: 'Miercoles', latitude: 1, length: 2, schedule_id: s1)
-s.schedule_details.create(entry_time: 3, exit_time: 4, week_day: 'Jueves', latitude: 1, length: 2, schedule_id: s1)
-s.schedule_details.create(entry_time: 3, exit_time: 4, week_day: 'Viernes', latitude: 1, length: 2, schedule_id: s1)
-s.schedule_details.create(entry_time: 3, exit_time: 4, week_day: 'Sabado', latitude: 1, length: 2, schedule_id: s1)
-s.schedule_details.create(entry_time: 3, exit_time: 4, week_day: 'Domingo', latitude: 1, length: 2, schedule_id: s1)
+sc = Schedule.find(2)
+
+sc.schedule_details.create(entry_time: 3, exit_time: 4, week_day: 'Lunes', latitude: 1, length: 2, schedule_id: sc)
+sc.schedule_details.create(entry_time: 3, exit_time: 4, week_day: 'Martes', latitude: 1, length: 2, schedule_id: sc)
+sc.schedule_details.create(entry_time: 3, exit_time: 4, week_day: 'Miercoles', latitude: 1, length: 2, schedule_id: sc)
+sc.schedule_details.create(entry_time: 3, exit_time: 4, week_day: 'Jueves', latitude: 1, length: 2, schedule_id: sc)
+sc.schedule_details.create(entry_time: 3, exit_time: 4, week_day: 'Viernes', latitude: 1, length: 2, schedule_id: sc)
+sc.schedule_details.create(entry_time: 3, exit_time: 4, week_day: 'Sabado', latitude: 1, length: 2, schedule_id: sc)
+sc.schedule_details.create(entry_time: 3, exit_time: 4, week_day: 'Domingo', latitude: 1, length: 2, schedule_id: sc)
+
