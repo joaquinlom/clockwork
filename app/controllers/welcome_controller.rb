@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
     if session[:user_id] == nil
       render()
     else
-      render 'organizations/index'
+      redirect_to organizations_path
     end
 	end
 end
