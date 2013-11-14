@@ -9,8 +9,12 @@ ClockWork::Application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
+  delete 'memberships/:id' => 'memberships#destroy', as: 'delete_membership'
   get 'memberships/:id' => 'memberships#index'
+  post 'memberships/add/:organization_id' => 'memberships#create', as: 'add_membership'
+
   get 'schedules/:id' => 'schedules#index', as: 'schedules'
+  
   #resources :memberships
   resources :organizations
   resources :schedule_details

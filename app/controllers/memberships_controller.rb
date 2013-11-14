@@ -9,11 +9,22 @@ class MembershipsController < ApplicationController
     else
       user = User.find(id_user)
       @membership =  user.memberships.find(id_membership)
-      @memberships = Membership.find(:all, :conditions =>["organization_id <= ? ",@membership.organization.id] )
+      @memberships = Membership.where("organization_id = ? ",@membership.organization.id )
       @users = User.all()
       @roles = Rol.all()
     end
 	end
+  
+  def destroy
+    mem = Membership.find(params[:id])
+    id_organizacion = mem.organization.id
+    mem.destroy
+    
+    id_user =  session[:user_id]
+    usuario = User.find(id_user)
+    membership_user = usuario.memberships.find_by_organization_id(id_organizacion)
+    redirect_to  "/memberships/#{membership_user.id}"
+  end
   
   def create
     id_role = params[:role_id]
@@ -28,6 +39,12 @@ class MembershipsController < ApplicationController
     membership.rol = rol
     membership.organization = organization
     
+    membership.save
+    
+    id_user =  session[:user_id]
+    usuario = User.find(id_user)
+    membership_user = usuario.memberships.find_by_organization_id(id_organization)
+    redirect_to  "/memberships/#{membership_user.id}"
   end
   
   def author_params

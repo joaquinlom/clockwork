@@ -16,13 +16,15 @@
           <td>Nombre</td>
           <td>Perfil</td>
           <td>
-                <%= select_tag "user", options_from_collection_for_select(@users, "id", "user_name"),
-                  :include_blank => 'Usuarios' %>
-                <%= select_tag "rol", options_from_collection_for_select(@roles, "id", "name"),
-                  :include_blank => 'Roles' %>
+            <%= form_tag add_membership_path(@membership.organization.id) do %>
+              <%= select_tag "user_id", options_from_collection_for_select(@users, "id", "user_name"),
+                :include_blank => 'Usuarios' %>
+              <%= select_tag "role_id", options_from_collection_for_select(@roles, "id", "name"),
+                :include_blank => 'Roles' %>
               <button class="btn btn-success btn-xs"> 
                 <span class="glyphicon glyphicon-plus"></span> 
               </button>
+            <% end %>
           </td>
         </tr>
       </tbody>
@@ -35,12 +37,16 @@
             <%= member.rol.name %>
           </td>
           <td>
-            <button class="btn btn-danger btn-xs"> 
-              <span class="glyphicon glyphicon-trash"></span> 
-            </button>
+
             <button class="btn btn-primary btn-xs"> 
               <span class="glyphicon glyphicon-eye-open"></span> 
             </button>
+
+            <%= link_to(delete_membership_path(member), :method => :delete, :confirm => "¿Desea Eliminar el usuario de la Organización?") do  %>
+            <button class="btn btn-danger btn-xs"> 
+              <span class="glyphicon glyphicon-trash"></span> 
+            </button>
+            <% end %>
           </td>
 
         </tr>
