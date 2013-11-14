@@ -41,6 +41,9 @@ end
 #Gema para el Uso de Facebook
 gem 'omniauth-facebook'
 
+#Para usar google maps
+gem 'gmaps4rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

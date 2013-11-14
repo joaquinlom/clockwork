@@ -15,6 +15,7 @@ class SchedulesController < ApplicationController
     user = User.find(id_user)
     membership =  user.memberships.find(id_membership)
     @schedule = membership.schedules.new
+  end
   
   def create
     @schedule = membership.schedules.new(schedule_params)    

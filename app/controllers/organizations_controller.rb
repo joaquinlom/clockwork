@@ -9,6 +9,21 @@ class OrganizationsController < ApplicationController
     @organization = Organization.new
   end
   
+  def edit
+    id = params[:id]
+    @organization = Organization.find(id);
+  end
+  
+  def update
+    @organization = Organization.find(params[:id])
+    if @organization.update_attributes(organization_params)
+      flash[:notice] = 'Cambios Guardados Correctamente'
+      redirect_to :action => 'index'
+    else
+      render :action => 'edit'
+    end
+  end
+  
   def create
     @organization = Organization.new(organization_params)
     if @organization.save
@@ -24,6 +39,11 @@ class OrganizationsController < ApplicationController
     else
       render :action => 'new'
     end
+  end
+  
+  def destroy
+    Organization.find(params[:id]).destroy
+    redirect_to :action => 'index'
   end
   
   def organization_params

@@ -1,18 +1,44 @@
 <%= form_for(@organization) do |f| %>
-    <% if @organization.errors.any? %>
-      <p class = "alert alert-danger">Error al Guardar</p>
-    <% end %>
-    <div class="field">
-      <%= f.label :name, "Nombre" %>
-      <%= f.text_field :name, :class =>"form-control" %>
-    </div>
-
-    <div class = "field">
-      <%= f.label :description, "Fecha de Nacimiento" %><br>
-      <%= f.text_area :description %>
-    </div>
-    
-    <div class="actions">
-      <%= f.submit "Guardar", :class =>"btn btn-success" %>
-    </div>
+  <% if @organization.errors.any? %>
+    <p class = "alert alert-danger">Error al Guardar</p>
   <% end %>
+  <div class="field">
+    <%= f.label :name, "Nombre" %>
+    <%= f.text_field :name, :class =>"form-control" %>
+  </div>
+
+  <div class = "field">
+    <%= f.label :description, "Descripción" %><br>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Guardar", :class =>"btn btn-success" %>
+  </div>
+<% end %>
+
+<%#*<div style='width: 800px;'>%>
+  <%#*<div id="map" style='width: 800px; height: 400px;'></div>%>
+<%#*</div>%>
+
+    <%#*<script type="text/javascript">%>
+  
+  <%#*handler = Gmaps.build('Google');%>
+<%#*handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){%>
+  <%#*markers = handler.addMarkers([%>
+    <%#*{%>
+      <%#*"lat": 0,%>
+      <%#*"lng": 0,%>
+      <%#*"picture": {%>
+        <%#*"url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",%>
+        <%#*"width":  36,%>
+        <%#*"height": 36%>
+      <%#*},%>
+      <%#*"infowindow": "hello!"%>
+    <%#*}%>
+  <%#*]);%>
+  <%#*handler.bounds.extendWith(markers);%>
+  <%#*handler.fitMapToBounds();%>
+<%#*});%>
+
+<%#*</script>%>

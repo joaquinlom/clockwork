@@ -11,6 +11,7 @@ ClockWork::Application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
   get 'memberships/:id' => 'memberships#index'
   get 'schedules/:id' => 'schedules#index', as: 'schedules'
+  #resources :memberships
   resources :organizations
   resources :schedule_details
 
