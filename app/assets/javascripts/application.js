@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
+//= require jquery-gmaps-latlon-picker
 //= require_tree .

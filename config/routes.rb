@@ -17,7 +17,10 @@ ClockWork::Application.routes.draw do
   
   #resources :memberships
   resources :organizations
-  resources :schedule_details
+  #resources :schedule_details
+  
+  get 'schedule_details/:id/new' => 'schedule_details#new', as: 'add_sc_detail'
+  post 'schedule_details/add/:id_schedule' => 'schedule_details#create', as: 'add_schedule'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -6,64 +6,92 @@
 </div>
 <h1>Horarios</h1>
 <div class="container">
-   <% @membership.schedules.each do |schedu| %>
-  <div class="table-responsive">
-    <table class="table table-striped table-hover">
-      <thead>
-        <tr>
-          <td> <%= schedu.job %> </td>
-        </tr>
-        <tr>
-          <td>Lunes</td>
-          <td>Martes</td>
-          <td>Miercoles</td>
-          <td>Jueves</td>
-          <td>Viernes</td>
-          <td>Sabado</td>
-          <td>Domingo</td>
-          <td>Acciones</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
+  <% @membership.schedules.each do |schedu| %>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <td> <%= schedu.job %> </td>
+          </tr>
+          <tr>
+            <td>Lunes</td>
+            <td>Martes</td>
+            <td>Miercoles</td>
+            <td>Jueves</td>
+            <td>Viernes</td>
+            <td>Sabado</td>
+            <td>Domingo</td>
+            <td>
+              <button class="btn btn-success btn-xs">
+                <span class="glyphicon glyphicon-plus"></span> 
+              </button>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+
           <% schedu.schedule_details.each do |detail| %>
-          <td>
-            <% if schedu.id == detail.schedule_id %>
-            <% case detail.week_day when 'Lunes' %>
-            <%= detail.latitude %> - <%= detail.exit_time %>
-            
-            <% when 'Martes' %>
-            <%= detail.latitude %> - <%= detail.exit_time %>
+            <tr>
 
-            <% when 'Miercoles' %>
-            <%= detail.latitude %> - <%= detail.exit_time %>
+              <% if schedu.id == detail.schedule_id %>
 
-            <% when 'Jueves' %>
-            <%= detail.latitude %> - <%= detail.exit_time %>
+                <td>
+                  <% if detail.week_day == 'Lunes' %>
+                    <%= detail.entry_time %> - <%= detail.exit_time %>
+                  <% end %>
+                </td>
 
-            <% when 'Viernes' %>
-            <%= detail.latitude %> - <%= detail.exit_time %>
+                <td>
+                  <% if detail.week_day == 'Martes' %>
+                    <%= detail.entry_time %> - <%= detail.exit_time %>
+                  <% end %>
+                </td>
 
-            <% when 'Sabado' %>
-            <%= detail.latitude %> - <%= detail.exit_time %>
+                <td>
+                  <% if detail.week_day == 'Miercoles' %>
+                    <%= detail.entry_time %> - <%= detail.exit_time %>
+                  <% end %>
+                </td>
 
-            <% when 'Domingo' %>
-            <%= detail.latitude %> - <%= detail.exit_time %>
-            <% end %>
-            <% end %>
-          </td>
+                <td>
+                  <% if detail.week_day == 'Jueves' %>
+                    <%= detail.entry_time %> - <%= detail.exit_time %>
+                  <% end %>
+                </td>
+
+                <td>
+                  <% if detail.week_day == 'Viernes' %>
+                    <%= detail.entry_time %> - <%= detail.exit_time %>
+                  <% end %>
+                </td>
+
+                <td>
+                  <% if detail.week_day == 'Sabado' %>
+                    <%= detail.entry_time %> - <%= detail.exit_time %>
+                  <% end %>
+                </td>
+
+                <td>
+                  <% if detail.week_day == 'Domingo' %>
+                    <%= detail.entry_time %> - <%= detail.exit_time %>
+                  <% end %>
+                </td>
+
+              <% end %>
+
+
+              <td>
+                <button class="btn btn-danger btn-xs">
+                  <span class="glyphicon glyphicon-trash"></span> 
+                </button>
+                <button class="btn btn-primary btn-xs"> 
+                  <span class="glyphicon glyphicon-eye-open"></span> 
+                </button>
+              </td>
+            </tr>
           <% end %>
-          <td>
-            <button class="btn btn-danger btn-xs">
-              <span class="glyphicon glyphicon-trash"></span> 
-            </button>
-            <button class="btn btn-primary btn-xs"> 
-              <span class="glyphicon glyphicon-eye-open"></span> 
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+        </tbody>
+      </table>
+    </div>
   <% end %>
 </div>

@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
  
 
-User.create(user_name: 'Fernando Gomez Payan')
+#User.create(user_name: 'Fernando Gomez Payan')
 
 Rol.create(name: 'Administrador', description: 'Administrador de la Organización.')
 Rol.create(name: 'Miembro', description: 'Miembro de la Organización.')
