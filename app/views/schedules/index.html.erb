@@ -22,9 +22,11 @@
             <td>Sabado</td>
             <td>Domingo</td>
             <td>
+              <%= link_to(add_sc_detail_path(schedu), :method => :get) do  %>
               <button class="btn btn-success btn-xs">
                 <span class="glyphicon glyphicon-plus"></span> 
               </button>
+              <% end %>
             </td>
           </tr>
         </thead>
