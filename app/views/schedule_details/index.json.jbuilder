@@ -1,0 +1,1 @@
+son.extract! @schedule_det,:entry_time, :exit_time, :week_day, :latitude, :length,:created_at, :updated_at, :schedule_id, :id

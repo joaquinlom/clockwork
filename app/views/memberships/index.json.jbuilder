@@ -1,0 +1,1 @@
+json.extract! @memberships, :user_id, :organization_id, :created_at, :updated_at, :rol_id, :id
