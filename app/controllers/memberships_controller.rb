@@ -2,7 +2,7 @@ class MembershipsController < ApplicationController
   
 	def index
     id_user =  session[:user_id]
-    id_membership = session[:id]
+    id_membership = params[:id]
    
     if id_user == nil || id_membership == nil
       render "welcome/index"
