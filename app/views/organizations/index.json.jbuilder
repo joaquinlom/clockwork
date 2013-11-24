@@ -1,1 +1,3 @@
-json.extract! @organization,:name, :description, :created_at, :updated_at
+json.array!(@user.organizations) do |organization|
+  json.extract! organization, :name, :description
+end

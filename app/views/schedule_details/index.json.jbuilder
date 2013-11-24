@@ -1,1 +1,3 @@
-son.extract! @schedule_det,:entry_time, :exit_time, :week_day, :latitude, :length,:created_at, :updated_at, :schedule_id, :id
+json.array!(@membership.schedule.schedule_details) do |schedule_det|
+  json.extract! organization, :entry_time, :exit_time, :week_day, :latitude, :length, :schedule_id
+end
