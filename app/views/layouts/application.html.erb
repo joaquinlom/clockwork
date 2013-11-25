@@ -52,9 +52,21 @@
           <a  href="URL-FACEBOOK" target="_blank">
             <%= link_to image_tag('fb.png', :alt => 'siguenos en facebook', :align => 'right', :height => 32, :with => 32) %> 
           </a>
-          <a  href="URL-Google+" target="_blank">
-            <%= link_to image_tag('google.png', :alt => 'siguenos en Google +', :align => 'right', :align => 'right', :height => 32, :with => 32) %>
-          </a>
+           <!-- BOTON +1 EN Y COMPARTIT PUBLICACION EN GOOGLE PLUS -->
+          <script type="text/javascript">
+            window.___gcfg = {lang: 'es'};
+            (function() {
+              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+              po.src = 'https://apis.google.com/js/platform.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+          </script>
+
+          <script type="text/javascript" src="https://plus.google.com/100943609433078395916/js/plusone.js">
+          </script>
+            <link rel="canonical" href="https://plus.google.com/100943609433078395916" />
+          <g:plusone></g:plusone>
+      <div> </div>
           <a  href="URL-Twitter" target="_blank">
             <%= link_to image_tag('twitter.png', :alt => 'siguenos en Twitter', :align => 'right', :align => 'right', :height => 32, :with => 32) %>
           </a>
