@@ -5,8 +5,6 @@ class SchedulesController < ApplicationController
   def index
     id_user =  session[:user_id]
     id_membership = params[:id]
-    
-    user = User.find(id_user)
     @membership =  Membership.find(id_membership)
 	end
   
@@ -15,17 +13,24 @@ class SchedulesController < ApplicationController
   
   def new
     id_user =  session[:user_id]
-    id_membership = params[:id]
+    id_membership = params[:id_mem]
     
     user = User.find(id_user)
-    membership =  user.memberships.find(id_membership)
-    @schedule = membership.schedules.new
+    @membership =  user.memberships.find(id_membership)
+    
+    @schedule = @membership.schedules.new
   end
   
   def create
-    @schedule = membership.schedules.new(schedule_params)    
+    id_user =  session[:user_id]
+    id_membership = params[:id_mem]
+    
+    user = User.find(id_user)
+    membership =  user.memberships.find(id_membership)
+    @schedule = membership.schedules.new()
+    @schedule.job = params[:job]
     if @schedule.save
-      redirect_to new_schedule_detail_path
+      redirect_to add_sc_detail_path(@schedule)
     else
       render :action => "new"
     end
@@ -59,8 +64,5 @@ class SchedulesController < ApplicationController
     @schedule = membership.schedules.find(params[:id])
   end
   
-  def schedule_params
-    params.require(:schedule).permit(:job, :membership_id)
-  end
   
 end

@@ -1,57 +1,55 @@
-<%= form_tag add_schedule_path(@schedule_det.schedule_id),method: "post" do  %>
-  <% if @schedule_det.errors.any? %>
-    <p class = "alert alert-danger">Error al Guardar</p>
-  <% end %>
-  <div class="field">
-    <%= label_tag :entry_time, "Hora Entrada" %>
-    <%= time_field_tag :entry_time, class: "form-control" %>
-    </div>
-
-    <div class = "field">
-      <%= label_tag :exit_time, "Hora de Salida" %><br>
-      <%= time_field_tag :exit_time , class: "form-control"%>
+<%= form_tag add_schedule_path(@schedule_det.schedule_id),method: "post", role: "form", class:"form-horizontal" do  %>
+    <% if @schedule_det.errors.any? %>
+      <p class = "alert alert-danger">Error al Guardar</p>
+    <% end %>
+    <div class="form-group">
+      <%= label_tag :entry_time, "Hora Entrada" %><br>
+      <%= time_field_tag :entry_time, class: "form-control" %>
       </div>
 
-      <div class = "field">
-        <%= label_tag :week_day, "Dia de la Semana" %><br>
-        <%= text_field_tag :week_day %>
-      </div>
-      <div class = "field">
-        <%= label_tag :length, "Distancia" %><br>
-        <%= text_field_tag :length%>
-      </div>
-      <fieldset class="gllpLatlonPicker">
-        <div class = "field">
-          <%= label_tag :latitude, "Latitud" %><br>
-          <%= text_field_tag 'latitude',:latitude, class: 'gllpLatitude',:value=>28 %>
-          </div>
+      <div class="form-group">
+        <%= label_tag :exit_time, "Hora de Salida" %><br>
+        <%= time_field_tag :exit_time , class: "form-control"%>
+        </div>
 
-          <div class = "field">
-            <%= label_tag :longitude, "Longitud" %><br>
-            <%= text_field_tag  'longitude',:longitude, class: 'gllpLongitude',:value=>-106 %>
+        <div class="form-group">
+          <%= label_tag :week_day, "Dia de la Semana" %><br>
+          <%= text_field_tag :week_day %>
+        </div>
+        <div class="form-group">
+          <%= label_tag :length, "Distancia" %><br>
+          <%= text_field_tag :length%>
+        </div>
+        <fieldset class="gllpLatlonPicker">
+          <div class="form-group">
+            <%= label_tag :latitude, "Latitud" %><br>
+            <%= text_field_tag 'latitude',:latitude, class: 'gllpLatitude',:value=>28 %>
             </div>
 
-            <input type="text" class="gllpSearchField"><br>
-            <input type="button" class="gllpSearchButton" value="search"><br>
-            <div class="gllpMap" style='width: 800px; height: 400px;' >Google Maps</div><br>
-          </fieldset>
+            <div class="form-group">
+              <%= label_tag :longitude, "Longitud" %><br>
+              <%= text_field_tag  'longitude',:longitude, class: 'gllpLongitude',:value=>-106 %>
+              </div>
 
-          <div class="actions">
-            <%= submit_tag "Guardar", :class =>"btn btn-success" %>
-          </div>
+              <div class="gllpMap" style='width: 800px; height: 400px;' >Google Maps</div><br>
+            </fieldset>
 
-        <% end %>
+            <div class="actions">
+              <%= submit_tag "Guardar", :class =>"btn btn-success" %>
+            </div>
 
-        <script src="http://maps.googleapis.com/maps/api/js?sensor=false&latitude=50&longitude=-80"></script>
-        <script type="text/javascript">
-        <%#*$(document).ready(function() {%>
+          <% end %>
 
-        <%#*$('#latitud').change(function() {%>
-        <%#*console.log('bfbfewhkj');%>
-        <%#*$('#latitude').val($('#latitud').val());%>
+          <script src="http://maps.googleapis.com/maps/api/js?sensor=false&latitude=50&longitude=-80"></script>
+          <script type="text/javascript">
+          <%#*$(document).ready(function() {%>
 
-        <%#*});%>
+          <%#*$('#latitud').change(function() {%>
+          <%#*console.log('bfbfewhkj');%>
+          <%#*$('#latitude').val($('#latitud').val());%>
 
-        <%#*});%>
+          <%#*});%>
 
-        </script>
+          <%#*});%>
+
+          </script>

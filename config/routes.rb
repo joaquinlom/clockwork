@@ -14,13 +14,17 @@ ClockWork::Application.routes.draw do
   post 'memberships/add/:organization_id' => 'memberships#create', as: 'add_membership'
 
   get 'schedules/:id' => 'schedules#index', as: 'schedules'
+  get 'schedule/add/:id_mem' => 'schedules#new', as: 'add_job'
+  post 'schedule/:id_mem' => 'schedules#create', as: 'save_job'
   
   #resources :memberships
   resources :organizations
   #resources :schedule_details
   
+  
+  
   get 'schedule_details/:id/new' => 'schedule_details#new', as: 'add_sc_detail'
-  post 'schedule_details/add/:id_schedule' => 'schedule_details#create', as: 'add_schedule'
+  post 'schedule_details/add/:id_mem' => 'schedule_details#create', as: 'add_schedule'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
