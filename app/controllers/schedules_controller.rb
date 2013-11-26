@@ -12,21 +12,17 @@ class SchedulesController < ApplicationController
   end
   
   def new
-    id_user =  session[:user_id]
+    
     id_membership = params[:id_mem]
     
-    user = User.find(id_user)
-    @membership =  user.memberships.find(id_membership)
-    
+    @membership =  Membership.find(id_membership)
     @schedule = @membership.schedules.new
   end
   
   def create
-    id_user =  session[:user_id]
     id_membership = params[:id_mem]
     
-    user = User.find(id_user)
-    membership =  user.memberships.find(id_membership)
+    membership =  Membership.find(id_membership)
     @schedule = membership.schedules.new()
     @schedule.job = params[:job]
     if @schedule.save
