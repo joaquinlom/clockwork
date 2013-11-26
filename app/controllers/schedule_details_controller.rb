@@ -7,7 +7,7 @@ class ScheduleDetailsController < ApplicationController
   end
   
   def create
-    id_schedule = params[:id_schedule]
+
     sc = ScheduleDetail.new
     sc.entry_time = params[:entry_time]
     sc.exit_time = params[:exit_time]
@@ -15,9 +15,12 @@ class ScheduleDetailsController < ApplicationController
     sc.length = Float(params[:length])
     sc.latitude = Float(params[:latitude])
     sc.longitude = Float(params[:longitude])
-    sc.schedule_id = params[:id_schedule]
+    sc.schedule_id = params[:id_mem]
+    
+    mem =  Schedule.find(params[:id_mem]).membership_id
+    
     if sc.save
-       redirect_to  "/schedules/#{id_schedule}"
+      redirect_to  schedules_path(mem)
     else
       render :action => 'new'
     end
